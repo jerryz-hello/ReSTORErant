@@ -61,11 +61,15 @@ export default function SignInSide() {
   const classes = useStyles();
 
   return (
+    
     <Grid container component="main" className={classes.root}>
+      
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
+          
+        
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
@@ -99,6 +103,7 @@ export default function SignInSide() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            
             <Button
               type="submit"
               fullWidth
@@ -106,7 +111,7 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
             >
-              Sign In
+              Sign in
             </Button>
             <Grid container>
               <Grid item xs>
