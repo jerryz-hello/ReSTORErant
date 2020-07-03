@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import Rating from '@material-ui/lab/Rating'
 
 function Copyright() {
   return (
@@ -59,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16];
 
 export default function Store() {
   const classes = useStyles();
@@ -105,7 +106,7 @@ export default function Store() {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
@@ -115,21 +116,45 @@ export default function Store() {
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={12}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      KFC
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
+                    </Grid>
+                    <Grid item xs={12}>
+                    <Typography component="p" variant="body2" color="textSecondary" align="left">
+                      American
                     </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Typography component="span" variant="body2" color="textSecondary" align="left">
+                      Pickup available
+                    </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Rating name="read-only" value={2} readOnly />
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Typography component="span" variant="body2" color="textSecondary" align="left">
+                      5.82 miles
+                    </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Typography component="span" variant="body2" color="textSecondary" align="right" style={{display:'block'}}>
+                      18 ratings
+                    </Typography>
+                    </Grid>
+                    </Grid>
                   </CardContent>
-                  <CardActions>
+                  {/* <CardActions>
                     <Button size="small" color="primary">
                       View
                     </Button>
                     <Button size="small" color="primary">
                       Edit
                     </Button>
-                  </CardActions>
+                  </CardActions> */}
                 </Card>
               </Grid>
             ))}
