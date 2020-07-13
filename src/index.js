@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Store from './store'
 import Restaurant from './restaurant'
+import Checkout from './Checkout'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" exact component={App}></Route>
         <Route path="/store" component={Store}></Route>
         <Route path="/restaurant" component={Restaurant}></Route>
+        <Route path="/checkout" component={Checkout}></Route>
     </Switch>
     </Router>
   </React.StrictMode>,
