@@ -10,6 +10,7 @@ import Checkout from './Checkout'
 import ShoppingCart from './ShoppingCart'
 import LoginPageR from './LoginPageR'
 import LoginPageW from './LoginPageW'
+import AddProduct from './AddProduct'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path="/cart" component={ShoppingCart}></Route>
         <Route path="/LoginPageR" component={LoginPageR}></Route>
         <Route path="/LoginPageW" component={LoginPageW}></Route>
+        <Route path="/product" component={AddProduct}></Route>
     </Switch>
     </Router>
   </React.StrictMode>,
