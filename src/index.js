@@ -8,6 +8,8 @@ import Store from './store'
 import Restaurant from './restaurant'
 import Checkout from './Checkout'
 import ShoppingCart from './ShoppingCart'
+import LoginPageR from './LoginPageR'
+import LoginPageW from './LoginPageW'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +20,8 @@ ReactDOM.render(
         <Route path="/restaurant" component={Restaurant}></Route>
         <Route path="/checkout" component={Checkout}></Route>
         <Route path="/cart" component={ShoppingCart}></Route>
+        <Route path="/LoginPageR" component={LoginPageR}></Route>
+        <Route path="/LoginPageW" component={LoginPageW}></Route>
     </Switch>
     </Router>
   </React.StrictMode>,

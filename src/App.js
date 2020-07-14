@@ -49,14 +49,14 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Restorerants Wholesale</h1>
               <h4>
-                We strive to create a better plat form to connect restaurants with
-                businesses that enhances their business.
+                We strive to create a better platform to connect restaurants with
+                wholesellers that enhance their businesses.
               </h4>
               <br />
               <Button
                 color="danger"
                 size="lg"
-                href="/store"
+                href="/LoginPageR"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -67,7 +67,7 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="/restaurant"
+                href="/LoginPageW"
                 target="_blank"
                 rel="noopener noreferrer"
               >
