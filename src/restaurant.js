@@ -74,9 +74,8 @@ export default function Restaurant() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            List my foods
           </Typography>
         </Toolbar>
       </AppBar>
@@ -85,7 +84,7 @@ export default function Restaurant() {
         <div className={classes.heroContent}>
           <Container maxWidth="md">
             <Typography component="h1" variant="h5" align="left" color="textPrimary" gutterBottom>
-              KFC
+              My Profile - Walmart
             </Typography>
             <Typography variant="subtitle1" align="left" color="textPrimary" component="span">
               2000 Lafayette Ave
@@ -93,12 +92,12 @@ export default function Restaurant() {
             <Link href="#" onClick={preventDefault} >
               Change locations
             </Link>
-            <Typography>    74 Food was good
-            71 Delivery was on time
-    70 Order was correct</Typography>
+            <Typography>
+            Fresh produce and grocery bundles
+            </Typography>
             <Rating
               name="simple-controlled"
-              value={value}
+              value={4}
               onChange={(event, newValue) => {
                 setValue(newValue);
               }}
@@ -107,24 +106,37 @@ export default function Restaurant() {
         </div>
         <Container maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={2}>
+          <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item xs={6}>
                 <Paper class={classes.paper} elevation="3">
                   <Grid container spacing={2} key={card}>
                     <Grid item >
                       <img class={classes.img}
-                        src="https://source.unsplash.com/random"
+                        src="https://source.unsplash.com/1600x900/?food"
                         alt="Image title"
                       />
                     </Grid>
                     <Grid item xs direction="column" container >
                       <Typography gutterBottom variant="h5" component="h4">
-                        8 pc. Family Fill Up + 12 Extra Crispy™ Tenders Bucket
+                        Vegetable Bundle
                         </Typography>
                       <Typography paragraph>
-                        Order a meal for today & tomorrow! 8 pieces of our freshly prepared chicken, available in Original Recipe® or Extra Crispy™, 2 Large Mashed Potatoes and Gravy, a Large Cole Slaw, 4 biscuits, and 12 Extra Crispy™ Tenders with 4 dipping sauces.
+                        10 pounds of assorted vegetables in box, free next day delivery.
+                        (Buttons sadly don't work for now.)
                         </Typography>
+                        <Button
+                        variant="contained" color="primary">
+                          List Product
+                        </Button>
+                        <Button
+                        variant="contained" color="red">
+                          Edit Product
+                        </Button>
+                        <Button
+                        variant="contained" color="secondary">
+                          Delete Product
+                        </Button>
                     </Grid>
                     <Grid item>
                       <Typography variant="p" color="textSecondary">$30.00</Typography>

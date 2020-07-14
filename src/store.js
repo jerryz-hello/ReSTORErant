@@ -109,51 +109,45 @@ export default function Store() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://source.unsplash.com/1600x900/?food"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Grid container spacing={1}>
                       <Grid item xs={12}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      KFC
+                      Walmart
                     </Typography>
                     </Grid>
                     <Grid item xs={12}>
                     <Typography component="p" variant="body2" color="textSecondary" align="left">
-                      American
+                      Fresh Produce Bundles
                     </Typography>
                     </Grid>
                     <Grid item xs={6}>
                     <Typography component="span" variant="body2" color="textSecondary" align="left">
-                      Pickup available
+                      (Picture changes with refresh)
                     </Typography>
                     </Grid>
                     <Grid item xs={6}>
-                    <Rating name="read-only" value={2} readOnly />
+                    <Rating name="read-only" value={4} readOnly />
                     </Grid>
                     <Grid item xs={6}>
                     <Typography component="span" variant="body2" color="textSecondary" align="left">
-                      5.82 miles
+                      2.82 miles
                     </Typography>
                     </Grid>
                     <Grid item xs={6}>
                     <Typography component="span" variant="body2" color="textSecondary" align="right" style={{display:'block'}}>
                       18 ratings
                     </Typography>
-
+                  </Grid>
+                  <Grid item>
                     <Button
-                    position= "relative"
-                    left = "50px"
+                    href="/checkout"
                     variant="contained" color="primary">
                       Order
                     </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Secondary action
-                    </Button>
-
                     </Grid>
                     </Grid>
                   </CardContent>
