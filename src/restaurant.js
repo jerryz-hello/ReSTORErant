@@ -126,6 +126,7 @@ export default function Restaurant() {
                         (Buttons sadly don't work for now.)
                         </Typography>
                         <Button
+                        href = "/product"
                         variant="contained" color="primary">
                           List Product
                         </Button>
