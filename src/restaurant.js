@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -17,6 +17,8 @@ import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 
 import Rating from '@material-ui/lab/Rating';
+import GetSheetDone from 'get-sheet-done'
+import DOCUMENT_ID from './config'
 
 function Copyright() {
   return (
@@ -47,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6),
   },
   img: {
-    width:128,
-    height:128,
+    width: 128,
+    height: 128,
     margin: 'auto',
     display: 'block',
     maxWidth: '100%',
@@ -57,18 +59,22 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     margin: 'auto',
-    maxWidth:500
+    maxWidth: 500
   }
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 
 
 function preventDefault() { }
 export default function Restaurant() {
   const [value, setValue] = React.useState(3);
+  const [products, setProducts] = useState([])
   const classes = useStyles();
 
+  useEffect(() => {
+    GetSheetDone.labeledCols(DOCUMENT_ID, 2).then(sheet =>setProducts(sheet.data))
+  })
   return (
     <React.Fragment>
       <CssBaseline />
@@ -93,7 +99,7 @@ export default function Restaurant() {
               Change locations
             </Link>
             <Typography>
-            Fresh produce and grocery bundles
+              Fresh produce and grocery bundles
             </Typography>
             <Rating
               name="simple-controlled"
@@ -107,10 +113,10 @@ export default function Restaurant() {
         <Container maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {products.map((product) => (
               <Grid item xs={6}>
                 <Paper class={classes.paper} elevation="3">
-                  <Grid container spacing={2} key={card}>
+                  <Grid container spacing={2} key={product}>
                     <Grid item >
                       <img class={classes.img}
                         src="https://source.unsplash.com/1600x900/?food"
@@ -119,28 +125,27 @@ export default function Restaurant() {
                     </Grid>
                     <Grid item xs direction="column" container >
                       <Typography gutterBottom variant="h5" component="h4">
-                        Vegetable Bundle
+                        {product.name}
                         </Typography>
                       <Typography paragraph>
-                        10 pounds of assorted vegetables in box, free next day delivery.
-                        (Buttons sadly don't work for now.)
+                        {product.description}
                         </Typography>
-                        <Button
-                        href = "/product"
+                      <Button
+                        href="/product"
                         variant="contained" color="primary">
-                          List Product
+                        List Product
                         </Button>
-                        <Button
+                      <Button
                         variant="contained" color="red">
-                          Edit Product
+                        Edit Product
                         </Button>
-                        <Button
+                      <Button
                         variant="contained" color="secondary">
-                          Delete Product
+                        Delete Product
                         </Button>
                     </Grid>
                     <Grid item>
-                      <Typography variant="p" color="textSecondary">$30.00</Typography>
+                      <Typography variant="p" color="textSecondary">${product.price}</Typography>
                     </Grid>
                   </Grid>
                 </Paper>
