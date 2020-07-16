@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function preventDefault() { }
-export default function Restaurant() {
+export default function Wholesaler() {
   const [value, setValue] = React.useState(3);
   const [products, setProducts] = useState([])
   const classes = useStyles();

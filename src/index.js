@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Store from './store'
-import Restaurant from './restaurant'
+import Wholesaler from './Wholesaler'
 import Checkout from './Checkout'
 import ShoppingCart from './ShoppingCart'
 import LoginPageR from './LoginPageR'
@@ -18,7 +18,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={App}></Route>
         <Route path="/store" component={Store}></Route>
-        <Route path="/restaurant" component={Restaurant}></Route>
+        <Route path="/Wholesaler" component={Wholesaler}></Route>
         <Route path="/checkout" component={Checkout}></Route>
         <Route path="/cart" component={ShoppingCart}></Route>
         <Route path="/LoginPageR" component={LoginPageR}></Route>
