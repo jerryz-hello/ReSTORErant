@@ -74,101 +74,119 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Product details', 'Review your product'];
-const products = [
-    { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
-    { name: 'Product 2', desc: 'Another thing', price: '$3.45' },
-    { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-    { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-  ];
-
-  function Review(){
-    const classes = useStyles();
-    return (
-            <React.Fragment>
-              <Typography variant="h6" gutterBottom>
-                Product summary
-              </Typography>
-              <List disablePadding>
-                {products.map((product) => (
-                  <ListItem className={classes.listItem} key={product.name}>
-                    <ListItemText primary={product.name} secondary={product.desc} />
-                    <Typography variant="body2">{product.price}</Typography>
-                  </ListItem>
-                ))}
-              </List>
-              
-            </React.Fragment>
-    )
-  }
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return (
-            <React.Fragment>
-              <Typography variant="h6" gutterBottom>
-                Product details
-              </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    id="name"
-                    name="name"
-                    label="Name"
-                    fullWidth
-                    autoComplete="name"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    id="description"
-                    name="description"
-                    label="Description"
-                    fullWidth
-                    autoComplete="description"
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    required
-                    id="price"
-                    name="price"
-                    label="Price"
-                    fullWidth
-                    autoComplete="price"
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    id="quantity"
-                    name="quantity"
-                    label="Quantity"
-                    type="number"
-                    fullWidth
-                    autoComplete="quantity"
-                  />
-                </Grid>
-              </Grid>
-            </React.Fragment>
-          )
-        break;
-    case 1:
-        return <Review></Review>
-    default:
-      throw new Error('Unknown step');
-  }
-}
 
 export default function AddProduct() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
+  const steps = ['Product details', 'Review your product'];
+
+  const [name, setName] = React.useState('')
+  const [description, setDescription] = React.useState('')
+  const [price, setPrice] = React.useState('')
+  const [quantity, setQuantity] = React.useState('')
+
+  function Review() {
+    const classes = useStyles();
+    return (
+      <React.Fragment>
+        <Typography variant="h6" gutterBottom>
+          Product summary
+        </Typography>
+        <List disablePadding>
+          <ListItem className={classes.listItem} key={name}>
+            <ListItemText primary={name} secondary={description} />
+            <Typography variant="body2">{price}</Typography>
+          </ListItem>
+        </List>
+
+      </React.Fragment>
+    )
+  }
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <React.Fragment>
+            <Typography variant="h6" gutterBottom>
+              Product details
+              </Typography>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  id="name"
+                  name="name"
+                  label="Name"
+                  fullWidth
+                  autoComplete="name"
+                  onChange={(event) => setName(event.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  id="description"
+                  name="description"
+                  label="Description"
+                  fullWidth
+                  autoComplete="description"
+                  onChange={(event) => setDescription(event.target.value)}
+
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  id="price"
+                  name="price"
+                  label="Price"
+                  fullWidth
+                  autoComplete="price"
+                  onChange={(event) => setPrice(event.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="quantity"
+                  name="quantity"
+                  label="Quantity"
+                  type="number"
+                  fullWidth
+                  autoComplete="quantity"
+                  onChange={(event) => setQuantity(event.target.value)}
+
+                />
+              </Grid>
+            </Grid>
+          </React.Fragment>
+        )
+      case 1:
+        return <Review></Review>
+      default:
+        throw new Error('Unknown step');
+    }
+  }
+
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if (activeStep === steps.length - 1) {
+      addProduct({name,description,price})
+    }
   };
+
+  function addProduct({ name, description, price }) {
+    const data = new URLSearchParams()
+    Object.entries({ "entry.207779487": name, "entry.1041034555": description, "entry.1115846303": price, "fvv": "1", "draftResponse": "[null,null,\"2721945909698223078\"]\r\n", "pageHistory": "0", "fbzx": "2721945909698223078" }).forEach(([key, value]) => {
+      data.append(key, value)
+    })
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScxizPqfKfBHDnBbNo05dsMDRIbwb1AKHdW1YFybVyH8ZbJ1w/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    })
+  }
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
@@ -204,25 +222,26 @@ export default function AddProduct() {
                 </Typography>
               </React.Fragment>
             ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
+                <React.Fragment>
+                  {getStepContent(activeStep)}
+                  <div className={classes.buttons}>
+                    {activeStep !== 0 && (
+                      <Button onClick={handleBack} className={classes.button}>
+                        Back
+                      </Button>
+                    )}
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      // onClick={handleNext}
+                      onClick={handleNext}
+                      className={classes.button}
+                    >
+                      {activeStep === steps.length - 1 ? 'Add product' : 'Next'}
                     </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Add product' : 'Next'}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
+                  </div>
+                </React.Fragment>
+              )}
           </React.Fragment>
         </Paper>
         <Copyright />
