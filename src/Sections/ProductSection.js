@@ -21,13 +21,9 @@ export default function ProductSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Let{"'"}s talk product</h2>
+          <h2 className={classes.title}>What is Restorerant</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+            Have you ever gone into a store thinking it had the produce you needed, only to find out that it was out of stock? Well that’s where Restorerant comes in. It provides you with a list of wholesalers and you can search through their stocks and find the product you need and know whether it’s in stock.
           </h5>
         </GridItem>
       </GridContainer>
@@ -35,17 +31,17 @@ export default function ProductSection() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Search Wholesaler’s Stock"
               icon={Chat}
+              description=""
               iconColor="info"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Compare Prices and Availability"
+              description=""
               icon={VerifiedUser}
               iconColor="success"
               vertical
@@ -53,8 +49,8 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Purchase Before Entering"
+              description=""
               icon={Fingerprint}
               iconColor="danger"
               vertical

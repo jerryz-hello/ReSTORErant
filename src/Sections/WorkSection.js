@@ -12,6 +12,11 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+
+import Select from '@material-ui/core/Select';
+
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
@@ -20,12 +25,9 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Comments or Concerns? </h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            Let us know anything you’d like to see in the next update or any feedback you’d like us to hear!
           </h4>
           <form>
             <GridContainer>
@@ -46,6 +48,16 @@ export default function WorkSection() {
                     fullWidth: true
                   }}
                 />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={"wholesaler"}
+                >
+                  <MenuItem value={"wholesaler"}>Wholesaler</MenuItem>
+                  <MenuItem value={"restaurant"}>Restaurant</MenuItem>
+                </Select>
               </GridItem>
               <CustomInput
                 labelText="Your Message"

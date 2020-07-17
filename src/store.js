@@ -76,7 +76,7 @@ export default function Store() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Wholesellers near me
+            Wholesalers near me
           </Typography>
         </Toolbar>
       </AppBar>
@@ -85,10 +85,10 @@ export default function Store() {
         <div className={classes.heroContent}>
           <Container maxWidth="md">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Wholesellers near me
+              Wholesalers near me
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Order from the wholesellers near you
+              Order from the wholesalers near you
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">

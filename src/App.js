@@ -19,7 +19,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
+// import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 
 const dashboardRoutes = [];
@@ -49,8 +49,7 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Restorerants Wholesale</h1>
               <h4>
-                We strive to create a better platform to connect restaurants with
-                wholesellers that enhance their businesses.
+                Tired of finding suppliers for your bussiness? Let RESTORErant find you the best fit and leave you more time on your business
               </h4>
               <br />
               <Button
@@ -72,7 +71,7 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                I am a wholeseller
+                I am a wholesaler
               </Button>
             </GridItem>
           </GridContainer>
@@ -81,7 +80,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
+          {/* <TeamSection /> */}
           <WorkSection />
         </div>
       </div>

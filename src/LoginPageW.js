@@ -55,7 +55,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Wholesellers Login</h4>
+                    <h4>Wholesalers Login</h4>
                     <div className={classes.socialLine}>
                       <Button
                         justIcon

@@ -103,7 +103,7 @@ export default function Wholesaler() {
             </Typography>
             <Rating
               name="simple-controlled"
-              value={4}
+              value={value}
               onChange={(event, newValue) => {
                 setValue(newValue);
               }}
