@@ -8,8 +8,8 @@ import Store from './store'
 import Wholesaler from './Wholesaler'
 import Checkout from './Checkout'
 import ShoppingCart from './ShoppingCart'
-import LoginPageR from './LoginPageR'
-import LoginPageW from './LoginPageW'
+import LoginPage from './LoginPage'
+// import LoginPageW from './LoginPageW'
 import AddProduct from './AddProduct'
 
 ReactDOM.render(
@@ -21,8 +21,8 @@ ReactDOM.render(
         <Route path="/Wholesaler" component={Wholesaler}></Route>
         <Route path="/checkout" component={Checkout}></Route>
         <Route path="/cart" component={ShoppingCart}></Route>
-        <Route path="/LoginPageR" component={LoginPageR}></Route>
-        <Route path="/LoginPageW" component={LoginPageW}></Route>
+        <Route path="/login" component={LoginPage}></Route>
+        {/* <Route path="/LoginPageW" component={LoginPageW}></Route> */}
         <Route path="/product" component={AddProduct}></Route>
     </Switch>
     </Router>

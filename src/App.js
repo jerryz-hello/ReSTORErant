@@ -55,15 +55,14 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="/LoginPageR"
+                href="/login"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                I am a restaurant
+                Sign in now
               </Button>
-              &nbsp;&nbsp;&nbsp;
-              <Button
+              {/* <Button
                 color="danger"
                 size="lg"
                 href="/LoginPageW"
@@ -72,7 +71,7 @@ export default function LandingPage(props) {
               >
                 <i className="fas fa-play" />
                 I am a wholesaler
-              </Button>
+              </Button> */}
             </GridItem>
           </GridContainer>
         </div>
