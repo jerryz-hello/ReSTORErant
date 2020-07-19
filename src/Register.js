@@ -6,6 +6,7 @@ import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
+import LockIcon from '@material-ui/icons/Lock';
 // core components
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -20,18 +21,31 @@ import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
-import image from "assets/img/bg8.jpg";
+import image from "assets/img/bg7.jpg";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  setTimeout(function() {
+  setTimeout(function () {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+
+  const [role, setRole] = React.useState('restaurant');
+  const handleRoleChange = (event) => {
+    setRole(event.target.value);
+  };
+
+
   return (
     <div>
       <Header
@@ -55,13 +69,13 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Wholesalers Login</h4>
-                    <div className={classes.socialLine}>
+                    <Typography align="center" component="h5" variant="h5">REGISTER</Typography>
+                    {/* <div className={classes.socialLine}>
                       <Button
                         justIcon
                         href="#pablo"
                         target="_blank"
-                        color="transparent"
+                        color="blue"
                         onClick={e => e.preventDefault()}
                       >
                         <i className={"fab fa-twitter"} />
@@ -70,7 +84,7 @@ export default function LoginPage(props) {
                         justIcon
                         href="#pablo"
                         target="_blank"
-                        color="transparent"
+                        color="purple"
                         onClick={e => e.preventDefault()}
                       >
                         <i className={"fab fa-facebook"} />
@@ -79,16 +93,23 @@ export default function LoginPage(props) {
                         justIcon
                         href="#pablo"
                         target="_blank"
-                        color="transparent"
+                        color="yellow"
                         onClick={e => e.preventDefault()}
                       >
                         <i className={"fab fa-google-plus-g"} />
                       </Button>
-                    </div>
+                    </div> */}
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  {/* <p className={classes.divider}>Or Be Classical</p> */}
                   <CardBody>
-                    <CustomInput
+                    <FormControl component="fieldset">
+                      <FormLabel component="legend">As</FormLabel>
+                      <RadioGroup aria-label="role" name="role" value={role} onChange={handleRoleChange}>
+                        <FormControlLabel value="restaurant" control={<Radio />} label="Restaurant" />
+                        <FormControlLabel value="wholesaler" control={<Radio />} label="Wholesaler" />
+                      </RadioGroup>
+                    </FormControl>
+                    {/* <CustomInput
                       labelText="First Name..."
                       id="first"
                       formControlProps={{
@@ -102,7 +123,7 @@ export default function LoginPage(props) {
                           </InputAdornment>
                         )
                       }}
-                    />
+                    /> */}
                     <CustomInput
                       labelText="Email..."
                       id="email"
@@ -128,9 +149,7 @@ export default function LoginPage(props) {
                         type: "password",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <LockIcon className={classes.inputIconsColor}></LockIcon>
                           </InputAdornment>
                         ),
                         autoComplete: "off"
@@ -138,10 +157,10 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button
-                    href="/wholesaler"
+                  <Button
+                    href={role==="restaurant"?"/store":"/wholesaler"}
                     simple color="primary" size="lg">
-                      Get started
+                      REGISTER
                     </Button>
                   </CardFooter>
                 </form>
