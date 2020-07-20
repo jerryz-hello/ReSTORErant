@@ -141,7 +141,7 @@ export default function Store() {
                   </Grid>
                   <Grid item>
                     <Button
-                    href="/checkout"
+                    href="/product-listing"
                     variant="contained" color="primary">
                       Order
                     </Button>

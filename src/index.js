@@ -12,6 +12,7 @@ import LoginPage from './LoginPage'
 // import LoginPageW from './LoginPageW'
 import AddProduct from './AddProduct'
 import Register from './Register'
+import ProductListing from './ProductListing'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route path="/register" component={Register}></Route>
         {/* <Route path="/LoginPageW" component={LoginPageW}></Route> */}
         <Route path="/product" component={AddProduct}></Route>
+        <Route path="/product-listing" component={ProductListing}></Route>
     </Switch>
     </Router>
   </React.StrictMode>,

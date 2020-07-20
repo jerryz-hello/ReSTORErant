@@ -115,13 +115,16 @@ export default function Wholesaler() {
           <Grid container spacing={4}>
             {products.map((product, index) => (
               <Grid key={index} item xs={6}>
-                <Paper class={classes.paper} elevation="3">
+                <Paper className={classes.paper} elevation={3}>
                   <Grid container spacing={2}>
-                    <Grid item >
-                      <img class={classes.img}
-                        src="https://source.unsplash.com/1600x900/?food"
-                        alt="Image title"
-                      />
+                    <Grid item style={{ position: 'realtive' }}>
+                      <div style={{ position: 'relative' }}>
+                        <img className={classes.img}
+                          src="https://source.unsplash.com/1600x900/?food"
+                          alt="Image title"
+                        />
+                        <span style={{ position: 'absolute', top: 5, left: 5, borderRadius: 2, fontFamily: 'Helvetica', color: '#222222', backgroundColor: 'hsla(0,0%,100%,.75)', padding: '2px 5px' }}>${product.price}</span>
+                      </div>
                     </Grid>
                     <Grid item xs direction="column" container >
                       <Typography gutterBottom variant="h5" component="h4">
@@ -131,21 +134,14 @@ export default function Wholesaler() {
                         {product.description}
                       </Typography>
                       <Button
-                        href="/product"
+                        href="/checkout"
                         variant="contained" color="primary">
-                        List Product
-                        </Button>
-                      <Button
-                        variant="contained" color="red">
-                        Edit Product
-                        </Button>
-                      <Button
-                        variant="contained" color="secondary">
-                        Delete Product
+                        Add to Cart
                         </Button>
                     </Grid>
+
                     <Grid item>
-                      <Typography variant="subtitle1" color="textSecondary">${product.price}</Typography>
+                      <Typography variant="subtitle1" color="textSecondary">38 in Stock</Typography>
                     </Grid>
                   </Grid>
                 </Paper>
