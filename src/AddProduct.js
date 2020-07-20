@@ -234,6 +234,16 @@ export default function AddProduct() {
                       variant="contained"
                       color="primary"
                       // onClick={handleNext}
+                      href = "/Wholesaler"
+                      onClick={handleNext}
+                      className={classes.button}
+                    >
+                      {activeStep === steps.length - 1 ? 'Add product' : 'Back'}
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      // onClick={handleNext}
                       onClick={handleNext}
                       className={classes.button}
                     >
