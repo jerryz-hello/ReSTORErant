@@ -52,6 +52,7 @@ export default function LoginPage(props) {
         absolute
         color="transparent"
         brand="Restorerant"
+
         rightLinks={<HeaderLinks />}
         {...rest}
       />
@@ -69,7 +70,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <Typography align="center" component="h5" variant="h5">Login</Typography>
+                    <Typography align="center" component="h5" variant="h5">Account Login</Typography>
                     {/* <div className={classes.socialLine}>
                       <Button
                         justIcon
@@ -105,7 +106,7 @@ export default function LoginPage(props) {
                     <FormControl component="fieldset">
                       <FormLabel component="legend">As</FormLabel>
                       <RadioGroup aria-label="role" name="role" value={role} onChange={handleRoleChange}>
-                        <FormControlLabel value="restaurant" control={<Radio />} label="Restaurant" />
+                        <FormControlLabel font = "sans-serif" value="restaurant" control={<Radio />} label="Restaurant" />
                         <FormControlLabel value="wholesaler" control={<Radio />} label="Wholesaler" />
                       </RadioGroup>
                     </FormControl>
@@ -160,7 +161,7 @@ export default function LoginPage(props) {
                   <Button
                     href={role==="restaurant"?"/store":"/wholesaler"}
                     simple color="primary" size="lg">
-                      Get started
+                      Log In
                     </Button>
                   </CardFooter>
                 </form>
