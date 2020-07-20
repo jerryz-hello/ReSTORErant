@@ -175,6 +175,11 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
+                  <Button
+                    href = "/"
+                    simple color="primary" size="lg">
+                    GO BACK
+                  </Button>
                     <Button
                       type="submit"
                       simple color="primary" size="lg">
