@@ -88,7 +88,13 @@ export default function Wholesaler() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
+
           <Container maxWidth="md">
+          <Button
+            href="/store"
+            simple color="primary" size="lg">
+              Go Back
+            </Button>
             <Typography component="h1" variant="h5" align="left" color="textPrimary" gutterBottom>
               My Profile - Walmart
             </Typography>
@@ -108,6 +114,7 @@ export default function Wholesaler() {
                 setValue(newValue);
               }}
             />
+
           </Container>
         </div>
         <Container maxWidth="md">

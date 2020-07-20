@@ -159,6 +159,11 @@ export default function LoginPage(props) {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                   <Button
+                    href= "/"
+                    simple color="primary" size="lg">
+                      Go Back
+                    </Button>
+                  <Button
                     href={role==="restaurant"?"/store":"/wholesaler"}
                     simple color="primary" size="lg">
                       Log In
