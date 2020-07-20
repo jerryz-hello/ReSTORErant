@@ -19,11 +19,11 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={App}></Route>
         <Route path="/store" component={Store}></Route>
-        <Route path="/Wholesaler" component={Wholesaler}></Route>
+        <Route path="/wholesaler" component={Wholesaler}></Route>
         <Route path="/checkout" component={Checkout}></Route>
         <Route path="/cart" component={ShoppingCart}></Route>
         <Route path="/login" component={LoginPage}></Route>
-        <Route path="/Register" component={Register}></Route>
+        <Route path="/register" component={Register}></Route>
         {/* <Route path="/LoginPageW" component={LoginPageW}></Route> */}
         <Route path="/product" component={AddProduct}></Route>
     </Switch>

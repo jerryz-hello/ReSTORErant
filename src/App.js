@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="Restaurant"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -47,7 +47,7 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Restorerants Wholesale</h1>
+              <h1 className={classes.title}>Restorerant Wholesale</h1>
               <h4>
                 Tired of finding suppliers for your bussiness? Let RESTORErant find you the best fit and leave you more time on your business
               </h4>
