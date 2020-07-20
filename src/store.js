@@ -76,7 +76,7 @@ export default function Store() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Wholesalers near me
+           Find Wholesalers
           </Typography>
         </Toolbar>
       </AppBar>
@@ -93,14 +93,6 @@ export default function Store() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
                 </Grid>
               </Grid>
             </div>
@@ -173,10 +165,9 @@ export default function Store() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          Restorerant Wholesales
         </Typography>
         <Copyright />
       </footer>
