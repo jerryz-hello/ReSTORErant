@@ -41,9 +41,25 @@ export default function LoginPage(props) {
   const { ...rest } = props;
 
   const [role, setRole] = React.useState('restaurant');
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };
+
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+
+  function signUp(e) {
+    e.preventDefault()
+    if (email===''||password===''||role==='') return
+    const data = new URLSearchParams()
+    Object.entries(
+      { "entry.1162344779": email, "entry.279212611": password, "entry.1491969427": role}
+    ).forEach(([key, value]) => {
+      data.append(key, value)
+    })
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSeD2el6fsrKw1LTx4j6UUmJX6R2kZTif71kj_m86w8qXz-WUA/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    }).then(res=>window.location.href=(role==='restaurant'?'/store':'/wholesaler'))
+  }
 
 
   return (
@@ -66,7 +82,7 @@ export default function LoginPage(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
-              <Card className={classes[cardAnimaton]}>
+              <Card className={classes[cardAnimaton]} onSubmit={signUp}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
                     <Typography align="center" component="h5" variant="h5">REGISTER</Typography>
@@ -101,10 +117,10 @@ export default function LoginPage(props) {
                     </div> */}
                   </CardHeader>
                   {/* <p className={classes.divider}>Or Be Classical</p> */}
-                  <CardBody>
+                  <CardBody >
                     <FormControl component="fieldset">
                       <FormLabel component="legend">As</FormLabel>
-                      <RadioGroup aria-label="role" name="role" value={role} onChange={handleRoleChange}>
+                      <RadioGroup aria-label="role" name="role" value={role} onChange={event=>setRole(event.target.value)}>
                         <FormControlLabel value="restaurant" control={<Radio />} label="Restaurant" />
                         <FormControlLabel value="wholesaler" control={<Radio />} label="Wholesaler" />
                       </RadioGroup>
@@ -131,6 +147,7 @@ export default function LoginPage(props) {
                         fullWidth: true
                       }}
                       inputProps={{
+                        onChange: event => setEmail(event.target.value),
                         type: "email",
                         endAdornment: (
                           <InputAdornment position="end">
@@ -146,6 +163,7 @@ export default function LoginPage(props) {
                         fullWidth: true
                       }}
                       inputProps={{
+                        onChange: event => setPassword(event.target.value),
                         type: "password",
                         endAdornment: (
                           <InputAdornment position="end">
@@ -157,9 +175,9 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                  <Button
-                    href={role==="restaurant"?"/store":"/wholesaler"}
-                    simple color="primary" size="lg">
+                    <Button
+                      type="submit"
+                      simple color="primary" size="lg">
                       REGISTER
                     </Button>
                   </CardFooter>
