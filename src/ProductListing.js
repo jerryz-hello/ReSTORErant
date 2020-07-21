@@ -83,7 +83,7 @@ export default function Wholesaler() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Products
+            Shop Items
           </Typography>
         </Toolbar>
       </AppBar>

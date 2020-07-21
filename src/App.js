@@ -60,7 +60,7 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                Login
+                Log In
               </Button>
               {/* <Button
                 color="danger"
