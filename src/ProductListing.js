@@ -13,8 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import TextField from '@material-ui/core/TextField';
 
 import Paper from '@material-ui/core/Paper';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import Rating from '@material-ui/lab/Rating';
 import GetSheetDone from 'get-sheet-done'
@@ -81,7 +83,11 @@ export default function Wholesaler() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
+<<<<<<< HEAD
             Products
+=======
+            Shop Items
+>>>>>>> 4806fcbd34595c4e663bbb0a1b17a1e17106bef0
           </Typography>
         </Toolbar>
       </AppBar>
@@ -96,14 +102,11 @@ export default function Wholesaler() {
               Go Back
             </Button>
             <Typography component="h1" variant="h5" align="left" color="textPrimary" gutterBottom>
-              My Profile - Walmart
+              Walmart
             </Typography>
             <Typography variant="subtitle1" align="left" color="textPrimary" component="span">
               2000 Lafayette Ave
             </Typography>
-            <Link href="#" onClick={preventDefault} >
-              Change locations
-            </Link>
             <Typography>
               Fresh produce and grocery bundles
             </Typography>
@@ -114,6 +117,18 @@ export default function Wholesaler() {
                 setValue(newValue);
               }}
             />
+            <Typography>
+            </Typography>
+            <Typography>
+              
+            </Typography>
+            <Button
+              href="/checkout"
+              variant="contained" color="primary">
+              My Cart
+
+            < ShoppingCartIcon className={classes.icons}/>
+            </Button>
 
           </Container>
         </div>
@@ -140,10 +155,18 @@ export default function Wholesaler() {
                       <Typography paragraph>
                         {product.description}
                       </Typography>
+                      <TextField
+          id="standard-textarea"
+          label="Enter Quantity"
+          placeholder=""
+          multiline
+        />
                       <Button
                         href="/checkout"
                         variant="contained" color="primary">
                         Add to Cart
+
+
                         </Button>
                     </Grid>
 
@@ -160,10 +183,10 @@ export default function Wholesaler() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+
         </Typography>
         <Copyright />
       </footer>

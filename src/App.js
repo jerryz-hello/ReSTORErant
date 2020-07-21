@@ -60,7 +60,11 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
+<<<<<<< HEAD
                 Login
+=======
+                Log In
+>>>>>>> 4806fcbd34595c4e663bbb0a1b17a1e17106bef0
               </Button>
               {/* <Button
                 color="danger"
