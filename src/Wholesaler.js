@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import TextField from '@material-ui/core/TextField';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -90,16 +91,13 @@ export default function Wholesaler() {
         <div className={classes.heroContent}>
           <Container maxWidth="md">
             <Typography component="h1" variant="h5" align="left" color="textPrimary" gutterBottom>
-              My Profile - Walmart
+              Walmart
             </Typography>
             <Typography variant="subtitle1" align="left" color="textPrimary" component="span">
               2000 Lafayette Ave
             </Typography>
-            <Link href="#" onClick={preventDefault} >
-              Change locations
-            </Link>
             <Typography>
-              Fresh produce and grocery bundles
+            Supermarket with a wide range of products at a guaranteed low price.
             </Typography>
             <Rating
               name="simple-controlled"
@@ -125,7 +123,7 @@ export default function Wholesaler() {
                         />
                         <span style={{ position: 'absolute', top: 5, left: 5, borderRadius: 2, fontFamily: 'Helvetica', color: '#222222', backgroundColor: 'hsla(0,0%,100%,.75)', padding: '2px 5px' }}>${product.price}</span>
                       </div>
-                      
+
                     </Grid>
                     <Grid item xs direction="column" container >
                       <Typography gutterBottom variant="h5" component="h4">
@@ -134,6 +132,12 @@ export default function Wholesaler() {
                       <Typography paragraph>
                         {product.description}
                       </Typography>
+                      <TextField
+          id="standard-textarea"
+          label="Enter Quantity"
+          placeholder=""
+          multiline
+        />
                       <Button
                         href="/product"
                         variant="contained" color="primary">
@@ -161,7 +165,7 @@ export default function Wholesaler() {
           Footer
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+
         </Typography>
         <Copyright />
       </footer>
