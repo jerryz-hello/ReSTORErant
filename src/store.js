@@ -117,7 +117,7 @@ export default function Store() {
                 <Card style={{ cursor: 'pointer' }} onClick={() => window.location.href = '/product-listing'} className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/1600x900/?food"
+                    image={wholesaler.logo}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>

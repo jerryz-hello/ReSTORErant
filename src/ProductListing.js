@@ -83,11 +83,7 @@ export default function Wholesaler() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-<<<<<<< HEAD
-            Products
-=======
             Shop Items
->>>>>>> 4806fcbd34595c4e663bbb0a1b17a1e17106bef0
           </Typography>
         </Toolbar>
       </AppBar>
