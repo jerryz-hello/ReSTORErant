@@ -16,6 +16,9 @@ import Link from '@material-ui/core/Link';
 import Rating from '@material-ui/lab/Rating'
 import DOCUMENT_ID from './config'
 import GetSheetDone from 'get-sheet-done'
+import SearchBar from 'material-ui-search-bar'
+
+
 
 function Copyright() {
   return (
@@ -93,6 +96,14 @@ export default function Store() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
+                <SearchBar
+      onChange={() => console.log('onChange')}
+      onRequestSearch={() => console.log('onRequestSearch')}
+      style={{
+        margin: '0 auto',
+        maxWidth: 800
+      }}
+    />
                 </Grid>
               </Grid>
             </div>
