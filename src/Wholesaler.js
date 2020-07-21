@@ -81,7 +81,7 @@ export default function Wholesaler() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            List my foods
+          My Available Inventory
           </Typography>
         </Toolbar>
       </AppBar>

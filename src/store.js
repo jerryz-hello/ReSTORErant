@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -65,10 +65,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Store() {
   const classes = useStyles();
-  const [wholesalers,setWholesalers]=useState([])
-  useEffect(()=>{
-    GetSheetDone.labeledCols(DOCUMENT_ID).then(sheet=>setWholesalers(sheet.data))
-  },[])
+  const [wholesalers, setWholesalers] = useState([])
+  useEffect(() => {
+    GetSheetDone.labeledCols(DOCUMENT_ID).then(sheet => setWholesalers(sheet.data))
+  }, [])
 
   return (
     <React.Fragment>
@@ -76,7 +76,7 @@ export default function Store() {
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-           Find Wholesalers
+            Find Wholesalers
           </Typography>
         </Toolbar>
       </AppBar>
@@ -103,7 +103,7 @@ export default function Store() {
           <Grid container spacing={2}>
             {wholesalers.map((wholesaler) => (
               <Grid item key={wholesaler} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
+                <Card style={{ cursor: 'pointer' }} onClick={() => window.location.href = '/product-listing'} className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
                     image="https://source.unsplash.com/1600x900/?food"
@@ -112,40 +112,40 @@ export default function Store() {
                   <CardContent className={classes.cardContent}>
                     <Grid container spacing={1}>
                       <Grid item xs={12}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {wholesaler.name}
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {wholesaler.name}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Typography component="p" variant="body2" color="textSecondary" align="left">
+                          {wholesaler.description}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={6}>
+                        {/* <Typography component="span" variant="body2" color="textSecondary" align="left">
+                          (Picture changes with refresh)
+                    </Typography> */}
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Rating name="read-only" value={4} readOnly />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Typography component="span" variant="body2" color="textSecondary" align="left">
+                          {wholesaler.distance} miles
                     </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                    <Typography component="p" variant="body2" color="textSecondary" align="left">
-                      {wholesaler.description}
-                    </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                    <Typography component="span" variant="body2" color="textSecondary" align="left">
-                      (Picture changes with refresh)
-                    </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                    <Rating name="read-only" value={4} readOnly />
-                    </Grid>
-                    <Grid item xs={6}>
-                    <Typography component="span" variant="body2" color="textSecondary" align="left">
-                      {wholesaler.distance} miles
-                    </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                    <Typography component="span" variant="body2" color="textSecondary" align="right" style={{display:'block'}}>
-                      {wholesaler.rating}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Button
-                    href="/product-listing"
-                    variant="contained" color="primary">
-                      Order
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Typography component="span" variant="body2" color="textSecondary" align="right" style={{ display: 'block' }}>
+                          {wholesaler.rating}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          href="/product-listing"
+                          variant="contained" color="primary">
+                          Order
                     </Button>
-                    </Grid>
+                      </Grid>
                     </Grid>
                   </CardContent>
                   {/* <CardActions>
