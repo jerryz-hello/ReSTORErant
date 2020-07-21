@@ -181,7 +181,7 @@ export default function Store() {
         <Typography variant="h6" align="center" gutterBottom>
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Restorerant Wholesales
+          ReSTORErant Wholesales
         </Typography>
         <Copyright />
       </footer>

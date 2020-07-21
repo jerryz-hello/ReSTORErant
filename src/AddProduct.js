@@ -198,7 +198,7 @@ export default function AddProduct() {
       <AppBar position="absolute" color="primary" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Restorerants Wholesale
+          ReSTORErant Wholesale
           </Typography>
         </Toolbar>
       </AppBar>
