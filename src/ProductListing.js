@@ -74,6 +74,10 @@ export default function Wholesaler() {
   const [products, setProducts] = useState([])
   const classes = useStyles();
 
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   useEffect(() => {
     GetSheetDone.labeledCols(DOCUMENT_ID, 2).then(sheet => setProducts(sheet.data))
   })
@@ -92,9 +96,9 @@ export default function Wholesaler() {
         <div className={classes.heroContent}>
 
           <Container maxWidth="md">
-          <Button
-            href="/store"
-            simple color="primary" size="lg">
+            <Button
+              href="/store"
+              simple="true" color="primary" size="large">
               Go Back
             </Button>
             <Typography component="h1" variant="h5" align="left" color="textPrimary" gutterBottom>
@@ -123,7 +127,7 @@ export default function Wholesaler() {
               variant="contained" color="primary">
               My Cart
 
-            < ShoppingCartIcon className={classes.icons}/>
+            < ShoppingCartIcon className={classes.icons} />
             </Button>
 
           </Container>
@@ -138,8 +142,8 @@ export default function Wholesaler() {
                     <Grid item style={{ position: 'realtive' }}>
                       <div style={{ position: 'relative' }}>
                         <img className={classes.img}
-                          src="https://source.unsplash.com/1600x900/?food"
-                          alt="Image title"
+                          src={product.photo}
+                          alt={product.name}
                         />
                         <span style={{ position: 'absolute', top: 5, left: 5, borderRadius: 2, fontFamily: 'Helvetica', color: '#222222', backgroundColor: 'hsla(0,0%,100%,.75)', padding: '2px 5px' }}>${product.price}</span>
                       </div>
@@ -152,22 +156,20 @@ export default function Wholesaler() {
                         {product.description}
                       </Typography>
                       <TextField
-          id="standard-textarea"
-          label="Enter Quantity"
-          placeholder=""
-          multiline
-        />
+                        id="standard-textarea"
+                        label="Enter Quantity"
+                        placeholder=""
+                        multiline
+                      />
                       <Button
                         href="/checkout"
                         variant="contained" color="primary">
                         Add to Cart
-
-
                         </Button>
                     </Grid>
 
                     <Grid item>
-                      <Typography variant="subtitle1" color="textSecondary">38 in Stock</Typography>
+                      <Typography variant="subtitle1" color="textSecondary">{product.quantity} in Stock</Typography>
                     </Grid>
                   </Grid>
                 </Paper>
