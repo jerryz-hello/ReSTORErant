@@ -48,9 +48,9 @@ export default function LandingPage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Restorerant Wholesale</h1>
-              <h4>
+              <h3>
                 Tired of finding suppliers for your bussiness? Let RESTORErant find you the best fit and leave you more time on your business
-              </h4>
+              </h3>
               <br />
               <Button
                 color="danger"

@@ -14,14 +14,16 @@ const landingPageStyle = {
     minHeight: "32px",
     color: "#FFFFFF",
     textDecoration: "none",
-    fontFamily: "sans-serif",
+    // fontFamily: "sans-serif",
+    fontFamily: "'Economica', sans-serif",
     fontSize: "55px"
   },
   subtitle: {
     fontSize: "1.313rem",
     maxWidth: "500px",
     margin: "10px auto 0",
-    fontFamily: "sans-serif",
+    // fontFamily: "sans-serif",
+    fontFamily: "'Economica', sans-serif",
   },
   main: {
     background: "#FFFFFF",

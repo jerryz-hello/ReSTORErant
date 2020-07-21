@@ -21,7 +21,7 @@ const buttonStyle = {
     position: "relative",
     padding: "12px 30px",
     margin: ".3125rem 1px",
-    fontSize: "12px",
+    fontSize: "16px",
     fontWeight: "400",
     textTransform: "uppercase",
     letterSpacing: "0",
@@ -258,7 +258,7 @@ const buttonStyle = {
   },
   lg: {
     padding: "1.125rem 2.25rem",
-    fontSize: "0.875rem",
+    fontSize: "1rem",
     lineHeight: "1.333333",
     borderRadius: "0.2rem"
   },

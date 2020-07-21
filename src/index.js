@@ -13,8 +13,20 @@ import LoginPage from './LoginPage'
 import AddProduct from './AddProduct'
 import Register from './Register'
 import ProductListing from './ProductListing'
+import { createMuiTheme,ThemeProvider } from '@material-ui/core/styles'
+
+const theme=createMuiTheme({
+  typography: {
+    fontFamily: "'Economica', sans-serif",
+    fontSize:16,
+    button:{
+      fontSize:'1rem'
+    }
+  }
+})
 
 ReactDOM.render(
+  <ThemeProvider theme={theme}>
   <React.StrictMode>
     <Router>
       <Switch>
@@ -30,7 +42,9 @@ ReactDOM.render(
         <Route path="/product-listing" component={ProductListing}></Route>
     </Switch>
     </Router>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </ThemeProvider>,
+  
   document.getElementById('root')
 );
 

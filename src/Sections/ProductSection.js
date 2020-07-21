@@ -22,9 +22,9 @@ export default function ProductSection() {
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>What is Restorerant</h2>
-          <h5 className={classes.description}>
+          <h3 className={classes.description}>
             Have you ever gone into a store thinking it had the produce you needed, only to find out that it was out of stock? Well that’s where Restorerant comes in. It provides you with a list of wholesalers and you can search through their stocks and find the product you need and know whether it’s in stock.
-          </h5>
+          </h3>
         </GridItem>
       </GridContainer>
       <div>

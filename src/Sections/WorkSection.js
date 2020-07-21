@@ -26,9 +26,9 @@ export default function WorkSection() {
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Comments or Concerns? </h2>
-          <h4 className={classes.description}>
+          <h3 className={classes.description}>
             Let us know anything you’d like to see in the next update or any feedback you’d like us to hear!
-          </h4>
+          </h3>
           <form>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
