@@ -68,10 +68,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Store() {
   const classes = useStyles();
-  const [wholesalers, setWholesalers] = useState([])
+  const [allWholesalers, setAllWholesalers] = useState([])
+  const [keyword, setKeyword] = useState('')
+  const wholesalers = allWholesalers.filter(wholesaler => wholesaler.name.toLowerCase().includes(keyword.toLowerCase()))
   useEffect(() => {
-    GetSheetDone.labeledCols(DOCUMENT_ID).then(sheet => setWholesalers(sheet.data))
+    GetSheetDone.labeledCols(DOCUMENT_ID).then(sheet => setAllWholesalers(sheet.data))
   }, [])
+
 
   return (
     <React.Fragment>
@@ -96,14 +99,14 @@ export default function Store() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                <SearchBar
-      onChange={() => console.log('onChange')}
-      onRequestSearch={() => console.log('onRequestSearch')}
-      style={{
-        margin: '0 auto',
-        maxWidth: 800
-      }}
-    />
+                  <SearchBar
+                    value={keyword}
+                    onChange={v=>setKeyword(v)}
+                    style={{
+                      margin: '0 auto',
+                      maxWidth: 800
+                    }}
+                  />
                 </Grid>
               </Grid>
             </div>
@@ -113,7 +116,7 @@ export default function Store() {
           {/* End hero unit */}
           <Grid container spacing={2}>
             {wholesalers.map((wholesaler) => (
-              <Grid item key={wholesaler} xs={12} sm={6} md={4}>
+              <Grid item key={wholesaler.name} xs={12} sm={6} md={4}>
                 <Card style={{ cursor: 'pointer' }} onClick={() => window.location.href = '/product-listing'} className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}

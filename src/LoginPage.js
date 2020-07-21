@@ -29,7 +29,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 import image from "assets/img/bg7.jpg";
 import { Typography } from "@material-ui/core";
-
+import Logo from './Logo'
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
@@ -51,7 +51,7 @@ export default function LoginPage(props) {
       <Header
         absolute
         color="transparent"
-        brand="Restorerant"
+        brand={<Logo/>}
 
         rightLinks={<HeaderLinks />}
         {...rest}

@@ -21,6 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 // import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+import Logo from './Logo'
 
 const dashboardRoutes = [];
 
@@ -29,12 +30,13 @@ const useStyles = makeStyles(styles);
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
+
   return (
     <div>
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Restaurant"
+        brand={<Logo/>}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -53,7 +55,7 @@ export default function LandingPage(props) {
               </h3>
               <br />
               <Button
-                color="danger"
+                color="primary"
                 size="lg"
                 href="/login"
                 target="_blank"

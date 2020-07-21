@@ -16,6 +16,11 @@ import ProductListing from './ProductListing'
 import { createMuiTheme,ThemeProvider } from '@material-ui/core/styles'
 
 const theme=createMuiTheme({
+  palette:{
+    primary:{
+      main:'#c3e5ea'
+    }
+  },
   typography: {
     fontFamily: "'Economica', sans-serif",
     fontSize:16,
