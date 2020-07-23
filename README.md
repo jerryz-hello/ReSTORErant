@@ -41,8 +41,8 @@ Q: If you had another 5 weeks to work on this, what would you do next?
 ### Team Members
 #### Pro Squad
 
-* Jerry - Architect & Full-stack developer
-* Alan - Front-end developer
+* Jerry - [zhengj2](https://github.com/zhengj2) - Architect & Full-stack developer
+* Alan - [AlanCao2000](https://github.com/YuanqiCao) - Front-end developer
 * Zahraa - QA tester
 
 #### Go Squad
