@@ -1,5 +1,5 @@
 # ReSTORErant 
-:hamburger:Connect your restaurant to local wholesalers easier than ever before!
+Connect your restaurant to local wholesalers easier than ever before!
 
 ### What Does ReSTORErant Do?
 
