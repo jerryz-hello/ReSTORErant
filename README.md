@@ -31,12 +31,12 @@ One of our coaches said her team uses Google Forms and Google Sheets when she pr
 
 Q: If you had another 5 weeks to work on this, what would you do next?
 
-- [] Contact Wholesalers and ask for collaboration
-- [] Research on React Native and replicate our app on mobile platforms
-- [] Phase out from a makeshift backend
-- [] Create a search engine so that restaurants 
-- [] Account Authentication
-- [] Implement real time map services
+- [ ] Contact Wholesalers and ask for collaboration
+- [ ] Research on React Native and replicate our app on mobile platforms
+- [ ] Phase out from a makeshift backend
+- [ ] Create a search engine so that restaurants 
+- [ ] Account Authentication
+- [ ] Implement real time map services
 
 ### Team Members
 #### Pro Squad
