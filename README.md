@@ -1,4 +1,4 @@
-## ReSTORErant 
+# ReSTORErant 
 
 :hamburger:Connect your restaurant to local wholesalers easier than ever before!
 
