@@ -1,6 +1,6 @@
 # ReSTORErant 
 
-Connect your restaurant to local wholesalers easier than ever before!
+Connect your restaurant to local wholesalers easier than ever before! [Try it out now!](http://restorerant.herokuapp.com/)
 
 ## What Does ReSTORErant Do?
 
